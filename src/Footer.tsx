@@ -76,7 +76,9 @@ const Footer = ({ onClear, setTool, tool, undo, redo }: IFooterProps) => {
             underlayColor={theme.colors.underlayColor}
             backgroundColor="transparent"
             color={
-              item.name === tool ? theme.colors.primary : theme.colors.textColors.secondaryText
+              item.name === tool
+                ? theme.colors.textColors.primaryText
+                : theme.colors.textColors.secondaryText
             }
           />
         ))}
