@@ -6,8 +6,9 @@ Welcome to the React Native Painting App, built using React Native and the power
 
 React Native Skia brings the renowned Skia Graphics Library to React Native. Skia, known for being the graphics engine behind Google Chrome, Android, and many other major software products, ensures smooth and efficient rendering of your drawings.
 
+ 
 
-https://github.com/CodeByRahulSaini/react-native-painting-app/assets/30212408/ca06dae1-ac24-47b7-a12a-ecb0ec555934
+https://github.com/CodeByRahulSaini/react-native-painting-app/assets/30212408/8dbdbc81-04e2-4a68-b797-19abbbc88fe1
 
 
  
