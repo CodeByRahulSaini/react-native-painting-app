@@ -1,12 +1,12 @@
 const lightTheme = {
   background: {
     gradient: {
-      start: { x: 1, y: 1 },
-      colors: ['#FFD54F', '#FFB74D', '#FF8A65'],
+      start: { x: 1, y: 1, z: 1 },
+      colors: ['hsla(189, 86%, 64%, 1)', 'hsla(277, 67%, 77%, 1) ', 'hsla(218, 88%, 59%, 1)'],
     },
   },
   colors: {
-    primary: '#FF5722', // Deep Orange
+    primary: 'hsla(277, 67%, 77%, 1)', // Deep Orange
     secondary: '#4CAF50', // Green
     accent: '#FFC107', // Amber
     error: '#F44336', // Red
