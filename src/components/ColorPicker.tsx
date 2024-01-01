@@ -1,4 +1,4 @@
-import { Modal, View, StyleSheet, Text, Pressable } from 'react-native';
+import { Modal, View, StyleSheet, Text, TouchableHighlight } from 'react-native';
 import ColorPicker, {
   Panel1,
   Swatches,
@@ -31,14 +31,17 @@ const ColorPickerComponent = ({
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
           <ColorPicker value={selectedColor} onComplete={onSelectColor}>
-            <Panel1 style={styles.gutter} />
-            <HueSlider style={styles.gutter} />
-            <OpacitySlider style={styles.gutter} />
-            <Swatches style={styles.gutter} />
+            <Panel1 style={styles.spacer} />
+            <HueSlider style={styles.spacer} />
+            <OpacitySlider style={styles.spacer} />
+            <Swatches style={styles.spacer} />
           </ColorPicker>
-          <Pressable onPress={onClose}>
-            <Text style={[{ color: colors.textColors.primaryText }, styles.button]}>Close</Text>
-          </Pressable>
+          <TouchableHighlight
+            style={styles.buttonContainer}
+            underlayColor={colors.underlayColor}
+            onPress={onClose}>
+            <Text style={[{ color: colors.textColors.secondaryText }, styles.button]}>CLOSE</Text>
+          </TouchableHighlight>
         </View>
       </View>
     </Modal>
@@ -52,13 +55,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // marginTop: 22,
   },
   modalView: {
-    margin: 20,
+    margin: '5%',
     backgroundColor: 'white',
     borderRadius: 20,
-    padding: 15,
+    padding: '5%',
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: {
@@ -69,11 +71,14 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
-  gutter: {
-    marginVertical: 8,
+  spacer: {
+    marginVertical: '3%',
+  },
+  buttonContainer: {
+    marginTop: '5%',
   },
   button: {
-    fontWeight: 'bold',
     fontSize: 16,
+    fontWeight: 'bold',
   },
 });

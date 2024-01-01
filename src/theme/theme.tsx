@@ -2,28 +2,22 @@ const lightTheme = {
   background: {
     gradient: {
       start: { x: 1, y: 1, z: 1 },
-      colors: ['hsla(189, 86%, 64%, 1)', 'hsla(277, 67%, 77%, 1) ', 'hsla(218, 88%, 59%, 1)'],
+      colors: ['hsla(298, 68%, 90%, 1)', 'hsla(30, 82%, 91%, 1) '],
     },
   },
   colors: {
-    primary: 'hsla(277, 67%, 77%, 1)', // Deep Orange
-    secondary: '#4CAF50', // Green
-    accent: '#FFC107', // Amber
-    error: '#F44336', // Red
-    surface: '#FFFFFF', // White
-    onSurface: '#212121', // Dark Grey for text on light background
-    onPrimary: '#FFFFFF', // White for text on primary color
+    primary: 'hsla(298, 68%, 90%, 1)',
+    secondary: 'hsla(30, 82%, 91%, 1)',
+    accent: '#FFC107',
+    error: '#F44336',
+    surface: '#FFFFFF',
+    onSurface: '#212121',
+    onPrimary: '#FFFFFF',
     textColors: {
       primaryText: '#212121',
-      secondaryText: '#ffffff',
+      secondaryText: '#b79eb7',
     },
-    underlayColor: 'rgba(255,255,255,0.6)',
-  },
-  gradients: {
-    sunrise: ['#FFD54F', '#FFB74D', '#FF8A65'], // Warm shades of sunrise
-    ocean: ['#4FC3F7', '#29B6F6', '#039BE5'], // Blue shades of ocean
-    forest: ['#81C784', '#66BB6A', '#4CAF50'], // Green shades of forest
-    sunset: ['#EF5350', '#EC407A', '#AB47BC'], // Sunset shades
+    underlayColor: 'rgba(0,0,0,0.05)',
   },
   fontSizes: {
     small: 12,
@@ -40,23 +34,7 @@ const lightTheme = {
 };
 
 const darkTheme = {
-  colors: {
-    primary: '#4CAF50', // Green
-    secondary: '#FFC107', // Amber
-    background: '#FFF8E1', // Light yellow
-    surface: '#A5D6A7', // Light green
-    error: '#D32F2F', // Red
-    text: '#1B5E20', // Dark green
-    onPrimary: '#FFFFFF',
-    onSecondary: '#000000',
-    onBackground: '#000000',
-    onSurface: '#000000',
-    onError: '#FFFFFF',
-    underlayColor: 'rgba(255,255,255,0.4)',
-  },
-  background: lightTheme.background,
-  fontSizes: lightTheme.fontSizes,
-  spacing: lightTheme.spacing,
+  ...lightTheme,
 };
 
 export { lightTheme, darkTheme };

@@ -1,6 +1,6 @@
 import { SkPoint, Skia, TouchInfo, useTouchHandler, vec } from '@shopify/react-native-skia';
 import { useCallback, useRef, useState } from 'react';
-import { useSharedValue } from 'react-native-reanimated';
+import { useSharedValue, withSpring } from 'react-native-reanimated';
 
 import { IPaintStyle, Tools } from '../shared.types';
 
@@ -67,17 +67,17 @@ const useCanvas = ({ paintStyle, tool }: { paintStyle: IPaintStyle; tool: string
         const a = shape.coordinates.cx - x;
         const b = shape.coordinates.cy - y;
         const c = Math.sqrt(a * a + b * b);
-        currentShape.current.coordinates.r.value = c;
+        currentShape.current.coordinates.r.value = withSpring(c);
       } else if (tool === Tools.square) {
-        currentShape.current.coordinates.width.value = x - shape.coordinates.x;
-        currentShape.current.coordinates.height.value = y - shape.coordinates.y;
+        currentShape.current.coordinates.width.value = withSpring(x - shape.coordinates.x);
+        currentShape.current.coordinates.height.value = withSpring(y - shape.coordinates.y);
       } else if (tool === Tools.pen) {
         const lastPoint = currentShape.current.coordinates.path.getLastPt();
         const xMid = (lastPoint.x + x) / 2;
         const yMid = (lastPoint.y + y) / 2;
         currentShape.current.coordinates.path.quadTo(lastPoint.x, lastPoint.y, xMid, yMid);
       } else if (tool === Tools.line) {
-        currentShape.current.coordinates.p2.value = vec(x, y);
+        currentShape.current.coordinates.p2.value = withSpring(vec(x, y));
         currentShape.current.coordinates.x = x;
         currentShape.current.coordinates.y = y;
       }

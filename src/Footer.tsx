@@ -91,24 +91,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    backgroundColor: '#fff',
   },
   gradient: {
     display: 'flex',
     shadowColor: '#000',
-    // paddingTop: 80,
-    backgroundColor: '#fff',
-
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.29,
-    shadowRadius: 4.65,
-
-    elevation: 7,
-    paddingHorizontal: 20,
-    paddingTop: 10,
+    paddingTop: '2.5%',
   },
   iconContainer: {
     display: 'flex',
@@ -116,7 +103,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     justifyContent: 'center',
-    gap: 10,
+    //@ts-ignore
+    gap: '14%',
   },
   icon: {
     marginRight: 0,

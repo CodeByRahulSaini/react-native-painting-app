@@ -35,6 +35,7 @@ const Header = ({ setPaintStyle, paintStyle }: IHeader) => {
             <RoundButton
               key={size}
               label={size}
+              active={paintStyle.strokeWidth === size}
               style={{
                 backgroundColor:
                   paintStyle.strokeWidth === size ? theme.colors.primary : 'transparent',
@@ -61,17 +62,8 @@ const Header = ({ setPaintStyle, paintStyle }: IHeader) => {
 const styles = StyleSheet.create({
   gradient: {
     display: 'flex',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.29,
-    shadowRadius: 4.65,
-    backgroundColor: '#fff',
-    elevation: 7,
     paddingHorizontal: '5%',
-    paddingBottom: '2%',
+    paddingBottom: '2.5%',
   },
   icon: {
     marginRight: 0,
@@ -82,7 +74,8 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center',
     justifyContent: 'space-around',
-    gap: 5,
+    // @ts-ignore
+    gap: '3%',
   },
 });
 
