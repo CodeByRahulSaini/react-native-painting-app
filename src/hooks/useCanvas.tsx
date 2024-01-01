@@ -64,10 +64,10 @@ const useCanvas = ({ paintStyle, tool }: { paintStyle: IPaintStyle; tool: string
       const shape = currentShape.current;
       if (!shape) return;
       if (tool === Tools.circle) {
-        const a = shape.coordinates.cx - x;
-        const b = shape.coordinates.cy - y;
-        const c = Math.sqrt(a * a + b * b);
-        currentShape.current.coordinates.r.value = withSpring(c);
+        const deltaX = shape.coordinates.cx - x;
+        const deltaY = shape.coordinates.cy - y;
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        currentShape.current.coordinates.r.value = withSpring(distance);
       } else if (tool === Tools.square) {
         currentShape.current.coordinates.width.value = withSpring(x - shape.coordinates.x);
         currentShape.current.coordinates.height.value = withSpring(y - shape.coordinates.y);
