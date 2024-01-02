@@ -10,7 +10,7 @@ interface IShapeProps {
 }
 
 const Shape = ({ tool, coordinates, color, strokeWidth }: IShapeProps) => {
-  const getTool = () => {
+  const getShape = () => {
     switch (tool) {
       case Tools.square:
         return Rect;
@@ -23,7 +23,7 @@ const Shape = ({ tool, coordinates, color, strokeWidth }: IShapeProps) => {
     }
   };
 
-  const Element = getTool();
+  const Element = getShape();
 
   return <Element {...coordinates} color={color} strokeWidth={strokeWidth} style="stroke" />;
 };
