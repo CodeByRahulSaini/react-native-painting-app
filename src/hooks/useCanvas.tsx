@@ -52,6 +52,7 @@ const useCanvas = ({ paintStyle, tool }: { paintStyle: IPaintStyle; tool: string
       const newShape = createShape(x, y);
       // @ts-ignore
       currentShape.current = newShape;
+      // TODO: Figure out a better way to rerender
       reRender((old) => old + 1); // Force re-render to render the current shape
     },
     [tool, paintStyle],
